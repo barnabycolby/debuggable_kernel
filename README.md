@@ -8,3 +8,8 @@
 - Support building a debuggable kernel.
 - Support custom user patches.
 - Polish this readme.
+
+## Dependencies
+- Vagrant
+- Arch linux
+- Build tools
