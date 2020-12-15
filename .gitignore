@@ -1,2 +1,8 @@
 # Ignore the vagrant build files
 vm/.vagrant
+#
+# Ignore Arch package build output.
+*/archlinux-linux
+*/pkg
+*/src
+*/*.pkg.tar.zst
