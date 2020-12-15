@@ -59,7 +59,7 @@ def set_debugging_cmdline_parameters():
                 print(f"The {key} line in {destination_path} didn't look like I expected it to. Exiting because I don't yet know how to handle this case.")
                 sys.exit(1)
 
-            new_line = line[:index_to_append_at] + b" kgdboc=ttyS0,115200 kgdbwait" + b'"'
+            new_line = line[:index_to_append_at] + b" kgdboc=ttyS0,115200 kgdbwait nokaslr" + b'"'
             lines[i] = new_line
             break
     else:
