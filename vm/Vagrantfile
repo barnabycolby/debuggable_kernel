@@ -1,4 +1,12 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "archlinux/archlinux"
   config.vm.box_version = "20201201.10292"
+
+  config.vm.provider "virtualbox" do |v|
+    # Enable the first serial port. The IO base and IRQ values are taken from https://www.virtualbox.org/manual/ch03.html#serialports.
+    v.customize ["modifyvm", :id, "--uart1", "0x3f8", "4"]
+
+    # Set the serial port to use a host pipe file.
+    v.customize ["modifyvm", :id, "--uartmode1", "server", "/tmp/kernel_debugging"]
+  end
 end
