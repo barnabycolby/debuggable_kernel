@@ -91,6 +91,7 @@ def main():
     args = parser.parse_args()
 
     version = args.version
+    os.symlink(version, "built_version", target_is_directory=True)
     build_kernel(version)
     create_vagrant_vm(version)
     set_debugging_cmdline_parameters()
