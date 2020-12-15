@@ -79,7 +79,7 @@ def set_debugging_cmdline_parameters():
     os.system(f"vagrant ssh -c 'sudo mv {source_path} {destination_path}'")
 
     # Finally, we need to tell grub to regenerate the actual grub file based on the change we just made.
-    os.system(f"vagrant ssh -c 'sudo grub-mkconfig -o /boot/grub/grub.cfgi'")
+    os.system(f"vagrant ssh -c 'sudo grub-mkconfig -o /boot/grub/grub.cfg'")
 
     # At the start of this function, we chdir'd to the VM directory. Reverse that here.
     os.chdir("..")
